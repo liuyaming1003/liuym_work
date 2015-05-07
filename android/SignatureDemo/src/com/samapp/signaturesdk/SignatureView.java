@@ -256,6 +256,10 @@ public class SignatureView extends LinearLayout{
 			touch_up();
 			invalidate();
 			break;
+		case MotionEvent.ACTION_CANCEL:
+			touch_up();
+			invalidate();
+			break;
 		}
 
 		return true;
