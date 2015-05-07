@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		969461DC1AFB79E200E51297 /* SignatureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969461DB1AFB79E200E51297 /* SignatureSDK.framework */; };
+		969461DD1AFB79EA00E51297 /* SignatureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969461DB1AFB79E200E51297 /* SignatureSDK.framework */; };
+		969461DE1AFB79EA00E51297 /* SignatureSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 969461DB1AFB79E200E51297 /* SignatureSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96DD7D0E1AFA11DB00503072 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD7D0D1AFA11DB00503072 /* main.m */; };
 		96DD7D111AFA11DB00503072 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD7D101AFA11DB00503072 /* AppDelegate.m */; };
 		96DD7D141AFA11DB00503072 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD7D131AFA11DB00503072 /* ViewController.m */; };
@@ -14,9 +17,6 @@
 		96DD7D191AFA11DB00503072 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96DD7D181AFA11DB00503072 /* Images.xcassets */; };
 		96DD7D1C1AFA11DB00503072 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DD7D1A1AFA11DB00503072 /* LaunchScreen.xib */; };
 		96DD7D281AFA11DB00503072 /* SignatureDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD7D271AFA11DB00503072 /* SignatureDemoTests.m */; };
-		96DD7D331AFA124000503072 /* SignatureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD7D321AFA124000503072 /* SignatureSDK.framework */; };
-		96DD7D351AFA16BC00503072 /* SignatureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD7D321AFA124000503072 /* SignatureSDK.framework */; };
-		96DD7D361AFA16BC00503072 /* SignatureSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD7D321AFA124000503072 /* SignatureSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96DD7D3A1AFA1A5600503072 /* SignatureImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD7D391AFA1A5600503072 /* SignatureImageVC.m */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				96DD7D361AFA16BC00503072 /* SignatureSDK.framework in Embed Frameworks */,
+				969461DE1AFB79EA00E51297 /* SignatureSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		969461DB1AFB79E200E51297 /* SignatureSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SignatureSDK.framework; sourceTree = "<group>"; };
 		96DD7D081AFA11DB00503072 /* SignatureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignatureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DD7D0C1AFA11DB00503072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96DD7D0D1AFA11DB00503072 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		96DD7D211AFA11DB00503072 /* SignatureDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignatureDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DD7D261AFA11DB00503072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96DD7D271AFA11DB00503072 /* SignatureDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignatureDemoTests.m; sourceTree = "<group>"; };
-		96DD7D321AFA124000503072 /* SignatureSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SignatureSDK.framework; sourceTree = "<group>"; };
 		96DD7D381AFA1A5600503072 /* SignatureImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureImageVC.h; sourceTree = "<group>"; };
 		96DD7D391AFA1A5600503072 /* SignatureImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureImageVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,8 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96DD7D351AFA16BC00503072 /* SignatureSDK.framework in Frameworks */,
-				96DD7D331AFA124000503072 /* SignatureSDK.framework in Frameworks */,
+				969461DD1AFB79EA00E51297 /* SignatureSDK.framework in Frameworks */,
+				969461DC1AFB79E200E51297 /* SignatureSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 		96DD7CFF1AFA11DB00503072 = {
 			isa = PBXGroup;
 			children = (
-				96DD7D321AFA124000503072 /* SignatureSDK.framework */,
+				969461DB1AFB79E200E51297 /* SignatureSDK.framework */,
 				96DD7D0A1AFA11DB00503072 /* SignatureDemo */,
 				96DD7D241AFA11DB00503072 /* SignatureDemoTests */,
 				96DD7D091AFA11DB00503072 /* Products */,
@@ -450,6 +450,7 @@
 				96DD7D2D1AFA11DB00503072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96DD7D2E1AFA11DB00503072 /* Build configuration list for PBXNativeTarget "SignatureDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +459,7 @@
 				96DD7D301AFA11DB00503072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

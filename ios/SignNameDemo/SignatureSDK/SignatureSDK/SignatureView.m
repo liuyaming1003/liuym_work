@@ -22,19 +22,17 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     };
 }
 
-@interface SignatureView(){
-    //UIBezierPath *path;
-    UIImage *incrImage;
-    CGPoint previousPoint;
-    
-    BOOL isUserTap;
-}
+@interface SignatureView()
 
-@property (strong, nonatomic) UIColor *pathColor;
-@property (strong, nonatomic) NSString *pathFilePath;
-@property (nonatomic) int pathWidth;
+@property (strong, nonatomic) UIColor        *pathColor;
+@property (strong, nonatomic) NSString       *pathFilePath;
+@property (nonatomic        ) int            pathWidth;
 
-@property (assign, nonatomic) BOOL hasSignature;
+@property (strong, nonatomic) UIImage        *signatureImage;
+
+@property (assign, nonatomic) BOOL           hasSignature;
+@property (assign, nonatomic) BOOL           hasDot;
+@property (assign, nonatomic) BOOL           isRunningPaint;
 
 @property (strong, nonatomic) NSMutableArray *pointArray;
 
@@ -76,11 +74,12 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     // path = [UIBezierPath bezierPath];
     
     self.hasSignature = NO;
+    self.isRunningPaint = NO;
     
     self.pointArray = [NSMutableArray array];
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector: @selector(doRotate: ) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [center addObserver:self selector: @selector(doRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 /**
@@ -88,17 +87,18 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
  *
  *    @param notification <#notification description#>
  */
-- (void)doRotate: (NSNotification *)notification{
-    if(incrImage != nil){
-        incrImage = [self signatureImage];
+- (void)doRotate:(NSNotification *)notification{
+    if(self.signatureImage != nil){
+        self.signatureImage = [self createSignatureImage];
+        [self.pointArray removeAllObjects];
     }
 }
 
-- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(int)panWidth
+- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(int)width
 {
     self.pathFilePath = filePath;
     self.pathColor = color;
-    self.pathWidth = panWidth;
+    self.pathWidth = width;
 }
 
 - (void)setImagePath:(NSString *)filePath
@@ -111,22 +111,30 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     self.pathColor = color;
 }
 
-- (void)setPanWidth:(int )panWidth
+- (void)setPanWidth:(int )width
 {
-    self.pathWidth = panWidth;
+    self.pathWidth = width;
 }
 
 - (void)eraseSignature
 {
-    incrImage = nil;
+    if(self.isRunningPaint){
+        return;
+    }
+    
+    self.signatureImage = nil;
     self.hasSignature = NO;
     [self setNeedsDisplay];
 }
 
-- (int)saveSignature
+- (SignatureType )saveSignature
 {
     if(self.hasSignature == NO){
-        return -1;
+        return Signature_No_Sign;
+    }
+    
+    if(self.isRunningPaint){
+        return Signature_Running;
     }
     
     if(UIGraphicsBeginImageContextWithOptions != NULL)
@@ -140,31 +148,36 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     /**
      *    开始保存图片
      */
+    
+    if(self.pathFilePath == nil){
+        return Signature_FilePath_Error;
+    }
+    
     NSArray *array = [self.pathFilePath componentsSeparatedByString:@"."];
     NSData *imageData = nil;
-    if(array.count == 2){
-        if([[[array objectAtIndex:1] lowercaseString] isEqualToString:@"jpg"]){
+    if(array.count >= 2){
+        if([[[array objectAtIndex:array.count - 1] lowercaseString] isEqualToString:@"jpg"]){
             imageData = UIImageJPEGRepresentation(image, 1.0f);
         }else{
             imageData = UIImagePNGRepresentation(image);
         }
     }else{
-        return -2;
+        return Signature_FilePath_Error;
     }
     
     if(imageData == nil){
-        return -3;
+        return Signature_Data_Error;
     }
     
     BOOL result = [imageData writeToFile:self.pathFilePath atomically:YES];
     if(result != YES){
-        return -4;
+        return Signature_Save_Error;
     }
     
-    return 0;
+    return Signature_OK;
 }
 
-- (UIImage *)signatureImage
+- (UIImage *)createSignatureImage
 {
     if(self.hasSignature == NO){
         return nil;
@@ -183,11 +196,11 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 
 - (void)drawRect:(CGRect)rect
 {
-    if(incrImage != nil){
+    if(self.signatureImage != nil){
         //绘制图片
-        if(rect.size.width == incrImage.size.width && rect.size.height == incrImage.size.height){
-            [incrImage drawInRect:rect];
-            NSLog(@"image size = %@", NSStringFromCGSize(incrImage.size));
+        if(rect.size.width == self.signatureImage.size.width && rect.size.height == self.signatureImage.size.height){
+            [self.signatureImage drawInRect:rect];
+            NSLog(@"image size = %@", NSStringFromCGSize(self.signatureImage.size));
         }
         
     }
@@ -226,10 +239,10 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 {
     NSLog(@"touches Began");
     CGPoint startPoint = [[[touches allObjects] objectAtIndex:0] locationInView:self];
-    // [path moveToPoint:startPoint];
-    previousPoint = startPoint;
-    [self.pointArray addObject:NSStringFromCGPoint(previousPoint)];
-    isUserTap = YES;
+    [self.pointArray addObject:NSStringFromCGPoint(startPoint)];
+    
+    self.hasDot = YES;
+    self.isRunningPaint = YES;
     
     [super touchesBegan:touches withEvent:event];
 }
@@ -237,7 +250,7 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
-    isUserTap = NO;
+    self.hasDot = NO;
     
     NSInteger touchCount = [[event allTouches] count];
     
@@ -248,7 +261,7 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
         }
         
         if(self.pointArray.count > 50){
-            incrImage = [self signatureImage];
+            self.signatureImage = [self createSignatureImage];
             CGPoint last = CGPointFromString([self.pointArray lastObject]);
             CGPoint lastProv = CGPointFromString([self.pointArray objectAtIndex:self.pointArray.count - 2]);
             CGPoint firstPoint = midpoint(lastProv, last);
@@ -257,12 +270,7 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
         }
         
         [self.pointArray addObject:NSStringFromCGPoint(movePoint)];
-        
-        
-        
         [self setNeedsDisplay];
-        
-        previousPoint = movePoint;
     }
     [super touchesMoved:touches withEvent:event];
 }
@@ -271,9 +279,7 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 {
     NSLog(@"touches Ended");
     
-    
-    
-    if(isUserTap){
+    if(self.hasDot){
         //绘制一个点
         CGPoint endPoint = [[[touches allObjects] objectAtIndex:0] locationInView:self];
         [self.pointArray addObject:NSStringFromCGPoint(endPoint)];
@@ -283,14 +289,19 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
         }
     }
     
+    self.isRunningPaint = NO;
+    
     [self setNeedsDisplay];
-    incrImage = [self signatureImage];
+    self.signatureImage = [self createSignatureImage];
     [self.pointArray removeAllObjects];
     [super touchesEnded:touches withEvent:event];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    NSLog(@"touchesCancelled");
+    self.signatureImage = [self createSignatureImage];
+    [self.pointArray removeAllObjects];
     [super touchesCancelled:touches withEvent:event];
 }
 

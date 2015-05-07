@@ -23,11 +23,11 @@
     // Do any additional setup after loading the view.
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"test.jpg"]];
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"com.app.jpg/test.jpg"]];
     
     NSLog(@"filePaht = %@", filePath);
     
-    [self.signView setSignature:filePath panColor:[UIColor whiteColor] panWidth:5];
+    [self.signView setSignature:filePath panColor:[UIColor blackColor] panWidth:5];
 }
 
 - (void)didReceiveMemoryWarning {

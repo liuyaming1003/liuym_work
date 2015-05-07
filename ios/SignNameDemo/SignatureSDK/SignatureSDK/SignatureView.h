@@ -7,6 +7,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum{
+    Signature_OK,                         // 保存成功
+    Signature_No_Sign,                    // 还未签名
+    Signature_Running,                    // 正在签名中
+    Signature_FilePath_Error,             // 文件路径错误
+    Signature_Data_Error,                 // 图片数据错误
+    Signature_Save_Error                  // 保存图片错误
+}SignatureType;
+
 /**
  *    签名
  * @note 图片保存大小与 View的size一致
@@ -20,7 +29,7 @@
  *    @param color    签名笔颜色
  *    @param panWidth 签名笔宽度
  */
-- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(int )panWidth;
+- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(int )width;
 
 /**
  *    设置签名图片保存路径
@@ -41,18 +50,16 @@
  *
  *    @param panWidth 宽度
  */
-- (void)setPanWidth:(int )panWidth;
+- (void)setPanWidth:(int )width;
 
 /**
  *    保存图片
  *
- *    @return 0  成功 其他失败
- *            -1 没有签名
- *            -2 文件路径错误
- *            -3 数据错误
- *            -4 保存图片错误
+ *    @return Signature_OK 成功
+ *            其他          失败
+ *    @see {SignatureType}
  */
-- (int) saveSignature;
+- (SignatureType ) saveSignature;
 
 /**
  *    擦除签名

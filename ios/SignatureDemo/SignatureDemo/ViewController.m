@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-    self.imageFilePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"test.jpg"]];
+    self.imageFilePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"com.app.jpg/test.jpg"]];
     
     NSLog(@"imageFilePath = %@", self.imageFilePath);
     
@@ -40,22 +40,25 @@
 - (IBAction)buttonPress:(UIButton *)button
 {
     if(button.tag == 1000){
-        int result = [self.signatureView saveSignature];
+        SignatureType type = [self.signatureView saveSignature];
         NSString *string = nil;
-        switch (result) {
-            case 0:
+        switch (type) {
+            case Signature_OK:
                 string = @"签名成功";
                 break;
-            case -1:
+            case Signature_No_Sign:
                 string = @"未签名";
                 break;
-            case -2:
+            case Signature_Running:
+                string = @"正在签名";
+                break;
+            case Signature_FilePath_Error:
                 string = @"文件路径错误";
                 break;
-            case -3:
+            case Signature_Data_Error:
                 string = @"数据错误";
                 break;
-            case -4:
+            case Signature_Save_Error:
                 string = @"保存图片错误";
                 break;
             default:
