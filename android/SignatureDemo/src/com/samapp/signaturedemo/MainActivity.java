@@ -3,6 +3,7 @@ package com.samapp.signaturedemo;
 import java.io.File;
 
 import com.samapp.signaturesdk.SignatureView;
+import com.samapp.signaturesdk.SignatureView.SignatureType;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -28,8 +29,8 @@ public class MainActivity extends Activity {
 	}
 
 	public void saveSignature(View v){
-		int result = signatureView.saveSignature();
-		if(result != 0){
+		SignatureType result = signatureView.saveSignature();
+		if(result != SignatureType.Signature_OK){
 			showMessage("保存失败 " + result);
 		}else{
 			showMessage("保存成功 ");
@@ -39,6 +40,10 @@ public class MainActivity extends Activity {
 
 	public void eraseSignature(View v){
 		signatureView.eraseSignature();
+	}
+	
+	public void previewSignature(View v){
+		
 	}
 
 	protected void showMessage(String msg){
