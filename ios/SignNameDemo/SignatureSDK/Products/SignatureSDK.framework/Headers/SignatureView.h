@@ -55,7 +55,7 @@
 - (int) saveSignature;
 
 /**
- *    擦出签名
+ *    擦除签名
  */
 - (void) eraseSignature;
 
