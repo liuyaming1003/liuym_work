@@ -15,6 +15,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -39,18 +40,20 @@ public class SignatureView extends LinearLayout{
 	}
 	
 	public SignatureView(Context context) {
-		this(context, null);
+		super(context, null);
+		
+		init();
 	}
 
 	public SignatureView(Context context, AttributeSet attrs) {
-		this(context, attrs, 0);
+		super(context, attrs);
+		
+		init();
 	}
 
 	public SignatureView(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
-
-		setMotionEventSplittingEnabled(false);
-
+		
 		init();
 	}
 
@@ -62,6 +65,13 @@ public class SignatureView extends LinearLayout{
 
 	private void init(){
 
+		if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.HONEYCOMB){
+			setMotionEventSplittingEnabled(false);
+		}else{
+			
+		}
+		
+		
 		signaturePaint = new Paint();  
 		signaturePaint.setStyle(Paint.Style.STROKE);  
 		signaturePaint.setAntiAlias(true);//抗锯齿

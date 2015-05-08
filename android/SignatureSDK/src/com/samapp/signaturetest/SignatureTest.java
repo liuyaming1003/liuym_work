@@ -1,7 +1,8 @@
-package com.samapp.signaturedemo;
+package com.samapp.signaturetest;
 
 import java.io.File;
 
+import com.samapp.signaturedemo.R;
 import com.samapp.signaturesdk.SignatureView;
 import com.samapp.signaturesdk.SignatureView.SignatureType;
 
@@ -12,7 +13,7 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class SignatureTest extends Activity {
 
 	private SignatureView signatureView;
 	private Toast mToast;
