@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view.
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"com.app.jpg/test.jpg"]];
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"test.jpg"]];
     
     NSLog(@"filePaht = %@", filePath);
     
@@ -51,7 +51,33 @@
 - (IBAction)operationSignature:(UIButton *)button
 {
     if(button.tag == 1000){
-        NSLog(@"result = %d", [self.signView saveSignature]);
+        SignatureType type = [self.signView saveSignature];
+        NSString *string = nil;
+        switch (type) {
+            case Signature_OK:
+                string = @"签名成功";
+                break;
+            case Signature_No_Sign:
+                string = @"未签名";
+                break;
+            case Signature_Running:
+                string = @"正在签名";
+                break;
+            case Signature_FilePath_Error:
+                string = @"文件路径错误";
+                break;
+            case Signature_Data_Error:
+                string = @"数据错误";
+                break;
+            case Signature_Save_Error:
+                string = @"保存图片错误";
+                break;
+            default:
+                break;
+        }
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提醒" message:string delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
     }else if(button.tag == 1001){
         [self.signView eraseSignature];
     }

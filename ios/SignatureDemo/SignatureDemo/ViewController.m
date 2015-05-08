@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-    self.imageFilePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"com.app.jpg/test.jpg"]];
+    self.imageFilePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"test.jpg"]];
     
     NSLog(@"imageFilePath = %@", self.imageFilePath);
     

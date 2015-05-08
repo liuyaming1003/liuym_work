@@ -300,6 +300,7 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touchesCancelled");
+    self.isRunningPaint = NO;
     self.signatureImage = [self createSignatureImage];
     [self.pointArray removeAllObjects];
     [super touchesCancelled:touches withEvent:event];
