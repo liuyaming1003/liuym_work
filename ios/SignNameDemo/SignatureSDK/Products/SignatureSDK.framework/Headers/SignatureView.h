@@ -29,7 +29,7 @@ typedef enum{
  *    @param color    签名笔颜色
  *    @param panWidth 签名笔宽度
  */
-- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(int )width;
+- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(CGFloat )width;
 
 /**
  *    设置签名图片保存路径
@@ -50,7 +50,7 @@ typedef enum{
  *
  *    @param panWidth 宽度
  */
-- (void)setPanWidth:(int )width;
+- (void)setPanWidth:(CGFloat )width;
 
 /**
  *    保存图片

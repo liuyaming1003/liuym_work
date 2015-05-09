@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
 
+@property (nonatomic, strong) IBOutlet UILabel *msgLabel;
+
 @end
 
 @implementation SignatureImageVC
@@ -21,6 +23,8 @@
     
     if(self.image){
         self.imageView.image = self.image;
+        
+        self.msgLabel.text = [NSString stringWithFormat:@"size%@", NSStringFromCGSize(self.image.size)];
     }
 }
 

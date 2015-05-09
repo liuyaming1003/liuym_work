@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 		
         System.out.println("(" + width + ", " + height + ") " + "密度 = " + density + " dpi = " + densityDpi);
 
-		signatureView.setSignature(filePath, Color.BLACK, 5);
+		signatureView.setSignature(filePath, Color.BLACK, 5 * density);
 	}
 
 	public void saveSignature(View v){

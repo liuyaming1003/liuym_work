@@ -26,7 +26,7 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 
 @property (strong, nonatomic) UIColor        *pathColor;
 @property (strong, nonatomic) NSString       *pathFilePath;
-@property (nonatomic        ) int            pathWidth;
+@property (nonatomic        ) CGFloat       pathWidth;
 
 @property (strong, nonatomic) UIImage        *signatureImage;
 
@@ -94,7 +94,7 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     }
 }
 
-- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(int)width
+- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(CGFloat )width
 {
     self.pathFilePath = filePath;
     self.pathColor = color;
@@ -111,7 +111,7 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     self.pathColor = color;
 }
 
-- (void)setPanWidth:(int )width
+- (void)setPanWidth:(CGFloat )width
 {
     self.pathWidth = width;
 }
@@ -225,7 +225,6 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
         }
         
         [self.pathColor setStroke];
-        [[UIColor clearColor] setFill];
         path.lineWidth = self.pathWidth;
         path.lineCapStyle = kCGLineCapRound; //线条拐角
         path.lineJoinStyle = kCGLineCapRound; //终点处理
@@ -281,8 +280,8 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     
     if(self.hasDot){
         //绘制一个点
-        CGPoint endPoint = [[[touches allObjects] objectAtIndex:0] locationInView:self];
-        [self.pointArray addObject:NSStringFromCGPoint(endPoint)];
+      //  CGPoint endPoint = [[[touches allObjects] objectAtIndex:0] locationInView:self];
+      //  [self.pointArray addObject:NSStringFromCGPoint(endPoint)];
         
         if(self.hasSignature == NO){
             self.hasSignature = YES;

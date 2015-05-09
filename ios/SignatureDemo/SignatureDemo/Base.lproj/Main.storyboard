@@ -34,47 +34,65 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi5-ga-LGc" customClass="SignatureView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="436"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-CD-DOY">
-                                <rect key="frame" x="160" y="500" width="280" height="100"/>
+                                <rect key="frame" x="160" y="550" width="280" height="50"/>
                                 <subviews>
                                     <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNv-bx-qwD">
-                                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                        <rect key="frame" x="10" y="0.0" width="80" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="HFf-bP-eLB"/>
                                             <constraint firstAttribute="width" constant="80" id="WGC-S4-5Do"/>
                                         </constraints>
                                         <state key="normal" title="保存">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="HFf-bP-eLB"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="buttonPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gvd-Nh-D1t"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWp-eF-SVz">
-                                        <rect key="frame" x="190" y="10" width="80" height="80"/>
+                                        <rect key="frame" x="190" y="0.0" width="80" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="a4d-tw-9r4"/>
                                             <constraint firstAttribute="height" constant="80" id="i1b-ig-Hxa"/>
                                         </constraints>
                                         <state key="normal" title="预览">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="i1b-ig-Hxa"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <segue destination="NKy-0D-rWS" kind="push" identifier="ShowSignatureImage" id="0qe-fG-Sqa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMg-QG-Ezo">
-                                        <rect key="frame" x="100" y="10" width="80" height="80"/>
+                                        <rect key="frame" x="100" y="0.0" width="80" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="u36-8O-8DA"/>
                                             <constraint firstAttribute="height" constant="80" id="w7e-7Q-11C"/>
                                         </constraints>
                                         <state key="normal" title="清除">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="w7e-7Q-11C"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="buttonPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GIk-uM-VGX"/>
                                         </connections>
@@ -83,13 +101,16 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="sNv-bx-qwD" secondAttribute="bottom" constant="10" id="5Eb-z4-rTx"/>
-                                    <constraint firstItem="FWp-eF-SVz" firstAttribute="top" secondItem="cdb-CD-DOY" secondAttribute="top" constant="10" id="9wC-Xl-gnU"/>
+                                    <constraint firstAttribute="bottom" secondItem="FWp-eF-SVz" secondAttribute="bottom" id="5qN-Qe-8mL"/>
+                                    <constraint firstItem="FWp-eF-SVz" firstAttribute="top" secondItem="cdb-CD-DOY" secondAttribute="top" id="9wC-Xl-gnU"/>
                                     <constraint firstItem="sNv-bx-qwD" firstAttribute="leading" secondItem="cdb-CD-DOY" secondAttribute="leading" constant="10" id="A4u-cX-E3b"/>
-                                    <constraint firstItem="sNv-bx-qwD" firstAttribute="top" secondItem="cdb-CD-DOY" secondAttribute="top" constant="10" id="FMo-0e-XmT"/>
+                                    <constraint firstItem="sNv-bx-qwD" firstAttribute="top" secondItem="cdb-CD-DOY" secondAttribute="top" id="FMo-0e-XmT"/>
                                     <constraint firstAttribute="trailing" secondItem="FWp-eF-SVz" secondAttribute="trailing" constant="10" id="I4O-4K-BJB"/>
-                                    <constraint firstItem="kMg-QG-Ezo" firstAttribute="top" secondItem="cdb-CD-DOY" secondAttribute="top" constant="10" id="Z8v-X4-Pu8"/>
+                                    <constraint firstItem="kMg-QG-Ezo" firstAttribute="top" secondItem="cdb-CD-DOY" secondAttribute="top" id="Z8v-X4-Pu8"/>
                                     <constraint firstItem="kMg-QG-Ezo" firstAttribute="leading" secondItem="sNv-bx-qwD" secondAttribute="trailing" constant="10" id="ZZb-85-zkj"/>
+                                    <constraint firstAttribute="bottom" secondItem="sNv-bx-qwD" secondAttribute="bottom" id="m3q-g4-SFU"/>
                                     <constraint firstItem="FWp-eF-SVz" firstAttribute="leading" secondItem="kMg-QG-Ezo" secondAttribute="trailing" constant="10" id="odb-jq-RyS"/>
+                                    <constraint firstAttribute="bottom" secondItem="kMg-QG-Ezo" secondAttribute="bottom" id="qmp-mq-KZP"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -108,7 +129,7 @@
                             <constraint firstItem="gi5-ga-LGc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PDC-JX-rtx"/>
                             <constraint firstAttribute="trailing" secondItem="cdb-CD-DOY" secondAttribute="trailing" constant="50" id="mSd-Ed-zoQ"/>
                             <constraint firstItem="gi5-ga-LGc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="oto-pF-zMe"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gi5-ga-LGc" secondAttribute="bottom" constant="100" id="vbJ-pl-Lke"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gi5-ga-LGc" secondAttribute="bottom" constant="50" id="vbJ-pl-Lke"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -139,20 +160,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ebZ-BG-yHH">
-                                <rect key="frame" x="0.0" y="64" width="600" height="436"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="486"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEQ-Ci-pNH">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4Z6-Fh-oB5" firstAttribute="top" secondItem="ZEQ-Ci-pNH" secondAttribute="bottom" id="1CA-Vh-5KR"/>
+                            <constraint firstItem="ZEQ-Ci-pNH" firstAttribute="top" secondItem="ebZ-BG-yHH" secondAttribute="bottom" id="CG3-fF-7Fr"/>
                             <constraint firstItem="ebZ-BG-yHH" firstAttribute="leading" secondItem="LPz-Wq-PHz" secondAttribute="leading" id="Sb9-DR-i3L"/>
                             <constraint firstAttribute="trailing" secondItem="ebZ-BG-yHH" secondAttribute="trailing" id="Vgc-ab-r7e"/>
-                            <constraint firstItem="4Z6-Fh-oB5" firstAttribute="top" secondItem="ebZ-BG-yHH" secondAttribute="bottom" constant="100" id="W9N-we-Ren"/>
+                            <constraint firstItem="4Z6-Fh-oB5" firstAttribute="top" secondItem="ebZ-BG-yHH" secondAttribute="bottom" constant="50" id="W9N-we-Ren"/>
+                            <constraint firstItem="ZEQ-Ci-pNH" firstAttribute="leading" secondItem="LPz-Wq-PHz" secondAttribute="leading" id="Z5V-K9-5el"/>
+                            <constraint firstAttribute="trailing" secondItem="ZEQ-Ci-pNH" secondAttribute="trailing" id="t9d-Ch-hG7"/>
                             <constraint firstItem="ebZ-BG-yHH" firstAttribute="top" secondItem="eJy-FE-kG3" secondAttribute="bottom" id="vO1-0U-xBO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4nc-tO-HCk"/>
                     <connections>
                         <outlet property="imageView" destination="ebZ-BG-yHH" id="4FA-qN-mJN"/>
+                        <outlet property="msgLabel" destination="ZEQ-Ci-pNH" id="gKy-df-Iz6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLF-dz-FFU" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -29,7 +29,7 @@
     
     NSLog(@"imageFilePath = %@", self.imageFilePath);
     
-    [self.signatureView setSignature:self.imageFilePath panColor:[UIColor blackColor] panWidth:4];
+    [self.signatureView setSignature:self.imageFilePath panColor:[UIColor blackColor] panWidth:4.4];
 }
 
 - (void)didReceiveMemoryWarning {
