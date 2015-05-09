@@ -27,7 +27,7 @@
     
     NSLog(@"filePaht = %@", filePath);
     
-    [self.signView setSignature:filePath panColor:[UIColor blackColor] panWidth:5];
+    [self.signView setSignature:filePath panColor:[UIColor blackColor] panWidth:5 imageScale:0.5 imageCompressionQuality:0.5];
 }
 
 - (void)didReceiveMemoryWarning {

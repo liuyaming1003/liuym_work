@@ -25,11 +25,13 @@ typedef enum{
 /**
  *    设置签名参数
  *
- *    @param filePath 签名图片保存的完整路径
+ *    @param filePath 签名图片保存的完整路径, 只支持jpg格式
  *    @param color    签名笔颜色
  *    @param panWidth 签名笔宽度
+ *    @param imageScale 缩放图片 0 < scale <= 1.0
+ *    @param imageCompressionQuality jpg图片压缩系数 0 < imageCompressionQuality <= 1.0
  */
-- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(CGFloat )width;
+- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(CGFloat )width imageScale:(CGFloat )imageScale imageCompressionQuality:(CGFloat )imageCompressionQuality;
 
 /**
  *    设置签名图片保存路径

@@ -24,15 +24,17 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 
 @interface SignatureView()
 
-@property (strong, nonatomic) UIColor        *pathColor;
-@property (strong, nonatomic) NSString       *pathFilePath;
-@property (nonatomic        ) CGFloat       pathWidth;
+@property (strong, nonatomic) UIColor  *pathColor;
+@property (strong, nonatomic) NSString *pathFilePath;
+@property (nonatomic        ) CGFloat  pathWidth;
+@property (nonatomic        ) CGFloat  imageScale;
+@property (nonatomic        ) CGFloat  imageCompressionQuality;
 
-@property (strong, nonatomic) UIImage        *signatureImage;
+@property (strong, nonatomic) UIImage  *signatureImage;
 
-@property (assign, nonatomic) BOOL           hasSignature;
-@property (assign, nonatomic) BOOL           hasDot;
-@property (assign, nonatomic) BOOL           isRunningPaint;
+@property (assign, nonatomic) BOOL     hasSignature;
+@property (assign, nonatomic) BOOL     hasDot;
+@property (assign, nonatomic) BOOL     isRunningPaint;
 
 @property (strong, nonatomic) NSMutableArray *pointArray;
 
@@ -73,10 +75,15 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 - (void)commonInit {
     // path = [UIBezierPath bezierPath];
     
+    self.imageScale = 1.0;
+    self.imageCompressionQuality = 1.0;
+    
     self.hasSignature = NO;
     self.isRunningPaint = NO;
     
     self.pointArray = [NSMutableArray array];
+    
+    
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector: @selector(doRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
@@ -94,11 +101,19 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     }
 }
 
-- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(CGFloat )width
+- (void)setSignature:(NSString *)filePath panColor:(UIColor *)color panWidth:(CGFloat )width imageScale:(CGFloat)imageScale imageCompressionQuality:(CGFloat)imageCompressionQuality
 {
     self.pathFilePath = filePath;
     self.pathColor = color;
     self.pathWidth = width;
+    
+    if(imageScale > 0.0f && imageScale <= 1.0f){
+        self.imageScale = imageScale;
+    }
+    
+    if(imageCompressionQuality > 0.0f && imageCompressionQuality <= 1.0f){
+        self.imageCompressionQuality = imageCompressionQuality;
+    }
 }
 
 - (void)setImagePath:(NSString *)filePath
@@ -139,7 +154,7 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     
     if(UIGraphicsBeginImageContextWithOptions != NULL)
     {
-        UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 1.0);
+        UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, self.imageScale);
     }
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -157,9 +172,10 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     NSData *imageData = nil;
     if(array.count >= 2){
         if([[[array objectAtIndex:array.count - 1] lowercaseString] isEqualToString:@"jpg"]){
-            imageData = UIImageJPEGRepresentation(image, 1.0f);
+            imageData = UIImageJPEGRepresentation(image, self.imageCompressionQuality);
         }else{
-            imageData = UIImagePNGRepresentation(image);
+            return Signature_FilePath_Error;
+            //imageData = UIImagePNGRepresentation(image);
         }
     }else{
         return Signature_FilePath_Error;

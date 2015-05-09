@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		965AA1A51AFDF42B00BD8F2A /* SignatureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965AA1A41AFDF42B00BD8F2A /* SignatureSDK.framework */; };
-		965AA1A61AFDF43000BD8F2A /* SignatureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965AA1A41AFDF42B00BD8F2A /* SignatureSDK.framework */; };
-		965AA1A71AFDF43000BD8F2A /* SignatureSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 965AA1A41AFDF42B00BD8F2A /* SignatureSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		969F52E41AFE1EED003AD1AE /* SignatureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969F52E31AFE1EED003AD1AE /* SignatureSDK.framework */; };
+		969F52E51AFE1EF3003AD1AE /* SignatureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969F52E31AFE1EED003AD1AE /* SignatureSDK.framework */; };
+		969F52E61AFE1EF3003AD1AE /* SignatureSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 969F52E31AFE1EED003AD1AE /* SignatureSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96DD7D0E1AFA11DB00503072 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD7D0D1AFA11DB00503072 /* main.m */; };
 		96DD7D111AFA11DB00503072 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD7D101AFA11DB00503072 /* AppDelegate.m */; };
 		96DD7D141AFA11DB00503072 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD7D131AFA11DB00503072 /* ViewController.m */; };
@@ -37,7 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				965AA1A71AFDF43000BD8F2A /* SignatureSDK.framework in Embed Frameworks */,
+				969F52E61AFE1EF3003AD1AE /* SignatureSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,7 +46,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		965AA1A41AFDF42B00BD8F2A /* SignatureSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SignatureSDK.framework; sourceTree = "<group>"; };
+		965AA1A41AFDF42B00BD8F2A /* SignatureSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SignatureSDK.framework; path = /Users/kermit/Project/liuym/liuym_work/ios/SignatureDemo/SignatureSDK.framework; sourceTree = "<absolute>"; };
+		969F52E31AFE1EED003AD1AE /* SignatureSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SignatureSDK.framework; sourceTree = "<group>"; };
 		96DD7D081AFA11DB00503072 /* SignatureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignatureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DD7D0C1AFA11DB00503072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96DD7D0D1AFA11DB00503072 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,8 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969F52E41AFE1EED003AD1AE /* SignatureSDK.framework in Frameworks */,
 				965AA1A51AFDF42B00BD8F2A /* SignatureSDK.framework in Frameworks */,
-				965AA1A61AFDF43000BD8F2A /* SignatureSDK.framework in Frameworks */,
+				969F52E51AFE1EF3003AD1AE /* SignatureSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +89,7 @@
 		96DD7CFF1AFA11DB00503072 = {
 			isa = PBXGroup;
 			children = (
-				965AA1A41AFDF42B00BD8F2A /* SignatureSDK.framework */,
+				969F52E31AFE1EED003AD1AE /* SignatureSDK.framework */,
 				96DD7D0A1AFA11DB00503072 /* SignatureDemo */,
 				96DD7D241AFA11DB00503072 /* SignatureDemoTests */,
 				96DD7D091AFA11DB00503072 /* Products */,
