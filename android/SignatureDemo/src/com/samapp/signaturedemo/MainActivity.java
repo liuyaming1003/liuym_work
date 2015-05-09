@@ -23,10 +23,10 @@ public class MainActivity extends Activity {
 		signatureView = (SignatureView) findViewById(R.id.signatureView);
 
 		//内置卡路径
-		//filePath = getCacheDir() + "/signature.png";
+		filePath = getCacheDir() + "/signature.png";
 
 		//外置卡路径
-		filePath = getExternalCacheDir() + "/signature.jpg";
+		//filePath = getExternalCacheDir() + "/signature.jpg";
 		
 		DisplayMetrics metric = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metric);
@@ -36,8 +36,10 @@ public class MainActivity extends Activity {
         int densityDpi = metric.densityDpi;  // 屏幕密度DPI（120 / 160 / 240）
 		
         System.out.println("(" + width + ", " + height + ") " + "密度 = " + density + " dpi = " + densityDpi);
+        
+        showMessage("(" + width + ", " + height + ") " + "密度 = " + density + " dpi = " + densityDpi);
 
-		signatureView.setSignature(filePath, Color.BLACK, 5 * density);
+		signatureView.setSignature(filePath, Color.BLACK, 4);
 	}
 
 	public void saveSignature(View v){

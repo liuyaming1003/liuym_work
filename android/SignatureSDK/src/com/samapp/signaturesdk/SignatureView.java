@@ -39,6 +39,9 @@ public class SignatureView extends LinearLayout{
 		Signature_Save_Error                  // 保存图片错误
 	}
 	
+	
+	private boolean Debug = false;
+	
 	public SignatureView(Context context) {
 		super(context, null);
 		
@@ -95,7 +98,7 @@ public class SignatureView extends LinearLayout{
 	 *    @param panColor 签名笔颜色
 	 *    @param panWidth 签名笔宽度
 	 */
-	public void setSignature(String filePath, int panColor, int panWidth){
+	public void setSignature(String filePath, int panColor, float panWidth){
 		this.filePath = filePath;
 		signaturePaint.setStrokeWidth(panWidth);
 		signaturePaint.setColor(panColor);
@@ -124,7 +127,7 @@ public class SignatureView extends LinearLayout{
 	 *
 	 *    @param panWidth 宽度
 	 */
-	public void setPanWidth(int panWidth){
+	public void setPanWidth(float panWidth){
 		signaturePaint.setStrokeWidth(panWidth);
 	}
 
@@ -235,7 +238,7 @@ public class SignatureView extends LinearLayout{
 		//signaturePath.lineTo(mX, mY);
 
 		if(hasDot){
-			signaturePath.lineTo(mX + 10, mY + 10);
+			signaturePath.lineTo(mX + 5, mY + 5);
 		}
 
 		DLog("touch_up ......", Log.DEBUG);	
@@ -288,7 +291,7 @@ public class SignatureView extends LinearLayout{
 	}
 
 	private void DLog(String log, int logTag){
-		if(BuildConfig.DEBUG){
+		if(Debug){
 			String tag = "SignatureView";
 			switch (logTag) {
 			case Log.VERBOSE:
