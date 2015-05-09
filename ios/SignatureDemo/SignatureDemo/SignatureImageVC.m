@@ -24,7 +24,7 @@
     if(self.image){
         self.imageView.image = self.image;
         
-        self.msgLabel.text = [NSString stringWithFormat:@"size%@", NSStringFromCGSize(self.image.size)];
+        self.msgLabel.text = [NSString stringWithFormat:@"fileSize = %@ kb, size%@", self.fileSize, NSStringFromCGSize(self.image.size)];
     }
 }
 

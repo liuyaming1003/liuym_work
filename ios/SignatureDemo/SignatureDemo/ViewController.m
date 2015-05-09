@@ -77,9 +77,20 @@
     if([segue.identifier isEqualToString:@"ShowSignatureImage"]){
         SignatureImageVC *vc = segue.destinationViewController;
         
+        NSLog(@"imageFileSize = %.2f kb", [self fileSizeAtPath:self.imageFilePath] / 1024.0);
+        
         UIImage *image = [UIImage imageWithContentsOfFile:self.imageFilePath];
         [vc setValue:image forKey:@"image"];
+        [vc setValue:[NSString stringWithFormat:@"%.2f",[self fileSizeAtPath:self.imageFilePath]/1024.0] forKey:@"fileSize"];
     }
+}
+
+- (long long) fileSizeAtPath:(NSString*) filePath{
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:filePath]){
+        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
+    }
+    return 0;
 }
 
 @end
