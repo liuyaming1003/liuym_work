@@ -27,18 +27,27 @@ public class MainActivity extends Activity {
 
 		//外置卡路径
 		filePath = getExternalCacheDir() + "/signature.jpg";
-		
-		DisplayMetrics metric = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metric);
-        int width = metric.widthPixels;  // 屏幕宽度（像素）
-        int height = metric.heightPixels;  // 屏幕高度（像素）
-        float density = metric.density;  // 屏幕密度（0.75 / 1.0 / 1.5）
-        int densityDpi = metric.densityDpi;  // 屏幕密度DPI（120 / 160 / 240）
-		
-        System.out.println("(" + width + ", " + height + ") " + "密度 = " + density + " dpi = " + densityDpi);
-        
-        showMessage("(" + width + ", " + height + ") " + "密度 = " + density + " dpi = " + densityDpi);
 
+		DisplayMetrics metric = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(metric);
+		int width = metric.widthPixels;  // 屏幕宽度（像素）
+		int height = metric.heightPixels;  // 屏幕高度（像素）
+		float density = metric.density;  // 屏幕密度（0.75 / 1.0 / 1.5）
+		int densityDpi = metric.densityDpi;  // 屏幕密度DPI（120 / 160 / 240）
+
+		System.out.println("(" + width + ", " + height + ") " + "密度 = " + density + " dpi = " + densityDpi);
+
+		showMessage("(" + width + ", " + height + ") " + "密度 = " + density + " dpi = " + densityDpi);
+		//参数说明
+		/**
+		 *    设置签名参数
+		 *
+		 *    @param filePath 签名图片保存的完整路径
+		 *    @param panColor 签名笔颜色
+		 *    @param panWidth 签名笔宽度
+		 *    @param imageScale 图片缩放 0 < imageScale <= 1.0
+		 *    @param imageCompressionQuality jpg压缩比例  0 < imageCompressionQuality <= 1.0f
+		 */
 		signatureView.setSignature(filePath, Color.BLACK, 4, 0.5f, 0.5f);
 	}
 
@@ -78,7 +87,7 @@ public class MainActivity extends Activity {
 	public void previewSignature(View v){
 		Intent intent = new Intent();
 		intent.setClass(this, SignatureImageActivity.class);
-		
+
 		intent.putExtra("FilePath", filePath);
 
 		startActivity(intent);
