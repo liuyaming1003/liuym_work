@@ -23,10 +23,10 @@ public class MainActivity extends Activity {
 		signatureView = (SignatureView) findViewById(R.id.signatureView);
 
 		//内置卡路径
-		filePath = getCacheDir() + "/signature.png";
+		//filePath = getCacheDir() + "/signature.png";
 
 		//外置卡路径
-		//filePath = getExternalCacheDir() + "/signature.jpg";
+		filePath = getExternalCacheDir() + "/signature.jpg";
 		
 		DisplayMetrics metric = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metric);
@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
         
         showMessage("(" + width + ", " + height + ") " + "密度 = " + density + " dpi = " + densityDpi);
 
-		signatureView.setSignature(filePath, Color.BLACK, 4);
+		signatureView.setSignature(filePath, Color.BLACK, 4, 0.5f, 0.5f);
 	}
 
 	public void saveSignature(View v){

@@ -25,7 +25,7 @@ public class SignatureTest extends Activity {
 
 		signatureView = (SignatureView) findViewById(R.id.signatureView);
 
-		signatureView.setSignature(Environment.getExternalStorageDirectory() + File.separator + "/sign/signature.png", Color.BLACK, 10);
+		//signatureView.setSignature(Environment.getExternalStorageDirectory() + File.separator + "/sign/signature.png", Color.BLACK, 10);
 
 	}
 

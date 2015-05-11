@@ -7,12 +7,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import com.samapp.signaturedemo.BuildConfig;
-
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Build;
@@ -23,13 +22,15 @@ import android.widget.LinearLayout;
 
 public class SignatureView extends LinearLayout{
 	private String filePath = null;            // 签名文件保存路径
+	private float imageScale;                  //
+	private float imageCompressionQuality;     //
 	private Bitmap signatureBitmap;            // 签名图片
 	private Paint signaturePaint;              // 签名画笔
 	private Path signaturePath;                // 签名路径
 	private boolean hasSignature;              // 签名是否有效
 	private boolean hasDot;                    // 签名是否是点
 	private boolean isRunningPaint;            // 是否正在进行签名
-	
+
 	public enum SignatureType{
 		Signature_OK,                         // 保存成功
 		Signature_No_Sign,                    // 还未签名
@@ -38,25 +39,25 @@ public class SignatureView extends LinearLayout{
 		Signature_Data_Error,                 // 图片数据错误
 		Signature_Save_Error                  // 保存图片错误
 	}
-	
-	
+
+
 	private boolean Debug = false;
-	
+
 	public SignatureView(Context context) {
 		super(context, null);
-		
+
 		init();
 	}
 
 	public SignatureView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		
+
 		init();
 	}
 
 	public SignatureView(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
-		
+
 		init();
 	}
 
@@ -71,10 +72,10 @@ public class SignatureView extends LinearLayout{
 		if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.HONEYCOMB){
 			setMotionEventSplittingEnabled(false);
 		}else{
-			
+
 		}
-		
-		
+
+
 		signaturePaint = new Paint();  
 		signaturePaint.setStyle(Paint.Style.STROKE);  
 		signaturePaint.setAntiAlias(true);//抗锯齿
@@ -89,6 +90,9 @@ public class SignatureView extends LinearLayout{
 		hasSignature = false;
 
 		isRunningPaint = false;
+
+		this.imageScale = 1.0f;
+		this.imageCompressionQuality = 1.0f;
 	}
 
 	/**
@@ -98,10 +102,18 @@ public class SignatureView extends LinearLayout{
 	 *    @param panColor 签名笔颜色
 	 *    @param panWidth 签名笔宽度
 	 */
-	public void setSignature(String filePath, int panColor, float panWidth){
+	public void setSignature(String filePath, int panColor, float panWidth, float imageScale, float imageCompressionQuality){
 		this.filePath = filePath;
 		signaturePaint.setStrokeWidth(panWidth);
 		signaturePaint.setColor(panColor);
+
+		if(imageScale > 0.0f && imageScale <= 1.0f){
+			this.imageScale = imageScale;
+		}
+
+		if(imageCompressionQuality > 0.0f && imageCompressionQuality <= 1.0f){
+			this.imageCompressionQuality = imageCompressionQuality;
+		}
 	}
 
 	/**
@@ -147,7 +159,7 @@ public class SignatureView extends LinearLayout{
 			return SignatureType.Signature_Running;
 		}
 
-		Bitmap bitmap = createViewBitmap();
+		Bitmap bitmap = createViewBitmap(imageScale);
 
 		if(filePath == null){
 			return SignatureType.Signature_FilePath_Error;
@@ -158,12 +170,13 @@ public class SignatureView extends LinearLayout{
 		if(fileStr.length >= 2){
 			if(fileStr[fileStr.length - 1].equalsIgnoreCase("jpg")){
 				ByteArrayOutputStream baos = new ByteArrayOutputStream();  
-				bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos); 
+				bitmap.compress(Bitmap.CompressFormat.JPEG, (int)(imageCompressionQuality * 100), baos); 
 				photoBytes = baos.toByteArray();  
 			}else{
-				ByteArrayOutputStream baos = new ByteArrayOutputStream();  
-				bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos); 
-				photoBytes = baos.toByteArray();  
+				//				ByteArrayOutputStream baos = new ByteArrayOutputStream();  
+				//				bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos); 
+				//				photoBytes = baos.toByteArray();  
+				return SignatureType.Signature_FilePath_Error;
 			}
 		}else{
 			return SignatureType.Signature_FilePath_Error;
@@ -218,7 +231,7 @@ public class SignatureView extends LinearLayout{
 		DLog("touch_start ......");	
 
 		hasDot = true;
-		
+
 		isRunningPaint = true;
 	}
 
@@ -244,13 +257,13 @@ public class SignatureView extends LinearLayout{
 		DLog("touch_up ......", Log.DEBUG);	
 
 		isRunningPaint = false;
-		
+
 		signatureBitmap = createViewBitmap();
 		signaturePath.reset();
 	}
 
-	
-	
+
+
 	public boolean onTouchEvent(MotionEvent  event){
 		hasSignature = true;
 		float x = event.getX(0);   
@@ -276,6 +289,15 @@ public class SignatureView extends LinearLayout{
 		}
 
 		return true;
+	}
+
+	private Bitmap createViewBitmap(float scale){
+		Bitmap bitmap = createViewBitmap();
+
+		Matrix matrix = new Matrix(); 
+		matrix.postScale(scale, scale); //长和宽放大缩小的比例
+		Bitmap resizeBmp = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),matrix,true);
+		return resizeBmp;
 	}
 
 	private Bitmap createViewBitmap() {
