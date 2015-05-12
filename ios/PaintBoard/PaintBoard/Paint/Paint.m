@@ -22,6 +22,69 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     };
 }
 
+@interface Paint()
+
+@end
+
+
+@implementation Paint
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if(self){
+        [self commonInit];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if(self){
+        [self commonInit];
+    }
+    
+    return self;
+}
+
+- (id)init
+{
+    self = [super init];
+    if(self){
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit
+{
+    
+}
+
+- (void)setPaintColor:(UIColor *)color
+{
+    
+}
+
+- (void)setPaintWidth:(CGFloat)width
+{
+
+}
+
+- (UIImage *)getPaintImage
+{
+    return nil;
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    
+}
+
+
+@end
+
 @interface SignatureView()
 
 @property (strong, nonatomic) UIColor        *pathColor;

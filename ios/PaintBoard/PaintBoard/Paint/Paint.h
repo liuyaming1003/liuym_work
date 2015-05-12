@@ -16,6 +16,18 @@
  * 5.添加自定义形状() (图片, 增加size，位置, 确认和取消)(自定义形状)
  */
 
+
+@interface Paint : UIView
+
+- (void)setPaintWidth:(CGFloat )width;
+
+- (void)setPaintColor:(UIColor *)color;
+
+- (UIImage *)getPaintImage;
+
+
+@end
+
 typedef enum{
     Signature_OK,                         // 保存成功
     Signature_No_Sign,                    // 还未签名
