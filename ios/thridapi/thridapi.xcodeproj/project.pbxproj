@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9624E8EE1B3D43AB00757E68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9624E8ED1B3D43AB00757E68 /* main.m */; };
+		9624E8F11B3D43AB00757E68 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9624E8F01B3D43AB00757E68 /* AppDelegate.m */; };
+		9624E8F41B3D43AB00757E68 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9624E8F31B3D43AB00757E68 /* ViewController.m */; };
+		9624E8F71B3D43AB00757E68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9624E8F51B3D43AB00757E68 /* Main.storyboard */; };
+		9624E8F91B3D43AB00757E68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9624E8F81B3D43AB00757E68 /* Images.xcassets */; };
+		9624E8FC1B3D43AB00757E68 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9624E8FA1B3D43AB00757E68 /* LaunchScreen.xib */; };
+		9624E9081B3D43AB00757E68 /* thridapiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9624E9071B3D43AB00757E68 /* thridapiTests.m */; };
+		9624E9151B3D441E00757E68 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624E9131B3D441E00757E68 /* TencentOpenAPI.framework */; };
+		9624E9161B3D441E00757E68 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9624E9141B3D441E00757E68 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		9624E9181B3D445D00757E68 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624E9171B3D445D00757E68 /* CoreTelephony.framework */; };
+		9624E91A1B3D446500757E68 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624E9191B3D446500757E68 /* CoreGraphics.framework */; };
+		9624E91C1B3D446900757E68 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624E91B1B3D446900757E68 /* SystemConfiguration.framework */; };
+		9624E91E1B3D446F00757E68 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624E91D1B3D446F00757E68 /* libiconv.dylib */; };
+		9624E9201B3D44BE00757E68 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624E91F1B3D44BE00757E68 /* Security.framework */; };
+		9624E9221B3D44C500757E68 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624E9211B3D44C500757E68 /* libstdc++.dylib */; };
+		9624E9251B3D4B8B00757E68 /* RDAPICommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9624E9241B3D4B8B00757E68 /* RDAPICommon.m */; };
+		9631AEFA1B414E58007D489D /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9631AEF61B414E58007D489D /* libWeChatSDK.a */; };
+		9631AEFB1B414E58007D489D /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9631AEF71B414E58007D489D /* read_me.txt */; };
+		9631AEFD1B415129007D489D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9631AEFC1B415129007D489D /* libz.dylib */; };
+		9631AF011B41513F007D489D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9631AF001B41513F007D489D /* libsqlite3.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9624E9021B3D43AB00757E68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9624E8E01B3D43AB00757E68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9624E8E71B3D43AB00757E68;
+			remoteInfo = thridapi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9624E8E81B3D43AB00757E68 /* thridapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thridapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9624E8EC1B3D43AB00757E68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9624E8ED1B3D43AB00757E68 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9624E8EF1B3D43AB00757E68 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9624E8F01B3D43AB00757E68 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9624E8F21B3D43AB00757E68 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9624E8F31B3D43AB00757E68 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9624E8F61B3D43AB00757E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9624E8F81B3D43AB00757E68 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9624E8FB1B3D43AB00757E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9624E9011B3D43AB00757E68 /* thridapiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = thridapiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9624E9061B3D43AB00757E68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9624E9071B3D43AB00757E68 /* thridapiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = thridapiTests.m; sourceTree = "<group>"; };
+		9624E9131B3D441E00757E68 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		9624E9141B3D441E00757E68 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		9624E9171B3D445D00757E68 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9624E9191B3D446500757E68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9624E91B1B3D446900757E68 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9624E91D1B3D446F00757E68 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		9624E91F1B3D44BE00757E68 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9624E9211B3D44C500757E68 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		9624E9231B3D4B8B00757E68 /* RDAPICommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDAPICommon.h; sourceTree = "<group>"; };
+		9624E9241B3D4B8B00757E68 /* RDAPICommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDAPICommon.m; sourceTree = "<group>"; };
+		9631AEF61B414E58007D489D /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		9631AEF71B414E58007D489D /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
+		9631AEF81B414E58007D489D /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		9631AEF91B414E58007D489D /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		9631AEFC1B415129007D489D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		9631AEFE1B415133007D489D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		9631AF001B41513F007D489D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9624E8E51B3D43AB00757E68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9631AF011B41513F007D489D /* libsqlite3.dylib in Frameworks */,
+				9631AEFD1B415129007D489D /* libz.dylib in Frameworks */,
+				9624E9221B3D44C500757E68 /* libstdc++.dylib in Frameworks */,
+				9624E9201B3D44BE00757E68 /* Security.framework in Frameworks */,
+				9631AEFA1B414E58007D489D /* libWeChatSDK.a in Frameworks */,
+				9624E91E1B3D446F00757E68 /* libiconv.dylib in Frameworks */,
+				9624E91C1B3D446900757E68 /* SystemConfiguration.framework in Frameworks */,
+				9624E91A1B3D446500757E68 /* CoreGraphics.framework in Frameworks */,
+				9624E9181B3D445D00757E68 /* CoreTelephony.framework in Frameworks */,
+				9624E9151B3D441E00757E68 /* TencentOpenAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9624E8FE1B3D43AB00757E68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9624E8DF1B3D43AB00757E68 = {
+			isa = PBXGroup;
+			children = (
+				9631AF001B41513F007D489D /* libsqlite3.dylib */,
+				9631AEFE1B415133007D489D /* libc++.dylib */,
+				9631AEFC1B415129007D489D /* libz.dylib */,
+				9624E9211B3D44C500757E68 /* libstdc++.dylib */,
+				9624E91F1B3D44BE00757E68 /* Security.framework */,
+				9624E91D1B3D446F00757E68 /* libiconv.dylib */,
+				9624E91B1B3D446900757E68 /* SystemConfiguration.framework */,
+				9624E9191B3D446500757E68 /* CoreGraphics.framework */,
+				9624E9171B3D445D00757E68 /* CoreTelephony.framework */,
+				9624E8EA1B3D43AB00757E68 /* thridapi */,
+				9624E9041B3D43AB00757E68 /* thridapiTests */,
+				9624E8E91B3D43AB00757E68 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9624E8E91B3D43AB00757E68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9624E8E81B3D43AB00757E68 /* thridapi.app */,
+				9624E9011B3D43AB00757E68 /* thridapiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9624E8EA1B3D43AB00757E68 /* thridapi */ = {
+			isa = PBXGroup;
+			children = (
+				9624E9111B3D441E00757E68 /* thridcommon */,
+				9624E8EF1B3D43AB00757E68 /* AppDelegate.h */,
+				9624E8F01B3D43AB00757E68 /* AppDelegate.m */,
+				9624E8F21B3D43AB00757E68 /* ViewController.h */,
+				9624E8F31B3D43AB00757E68 /* ViewController.m */,
+				9624E8F51B3D43AB00757E68 /* Main.storyboard */,
+				9624E8F81B3D43AB00757E68 /* Images.xcassets */,
+				9624E8FA1B3D43AB00757E68 /* LaunchScreen.xib */,
+				9624E8EB1B3D43AB00757E68 /* Supporting Files */,
+			);
+			path = thridapi;
+			sourceTree = "<group>";
+		};
+		9624E8EB1B3D43AB00757E68 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9624E8EC1B3D43AB00757E68 /* Info.plist */,
+				9624E8ED1B3D43AB00757E68 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9624E9041B3D43AB00757E68 /* thridapiTests */ = {
+			isa = PBXGroup;
+			children = (
+				9624E9071B3D43AB00757E68 /* thridapiTests.m */,
+				9624E9051B3D43AB00757E68 /* Supporting Files */,
+			);
+			path = thridapiTests;
+			sourceTree = "<group>";
+		};
+		9624E9051B3D43AB00757E68 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9624E9061B3D43AB00757E68 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9624E9111B3D441E00757E68 /* thridcommon */ = {
+			isa = PBXGroup;
+			children = (
+				9631AEF51B414E58007D489D /* WX */,
+				9624E9121B3D441E00757E68 /* QQ */,
+				9624E9231B3D4B8B00757E68 /* RDAPICommon.h */,
+				9624E9241B3D4B8B00757E68 /* RDAPICommon.m */,
+			);
+			path = thridcommon;
+			sourceTree = "<group>";
+		};
+		9624E9121B3D441E00757E68 /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+				9624E9131B3D441E00757E68 /* TencentOpenAPI.framework */,
+				9624E9141B3D441E00757E68 /* TencentOpenApi_IOS_Bundle.bundle */,
+			);
+			path = QQ;
+			sourceTree = "<group>";
+		};
+		9631AEF51B414E58007D489D /* WX */ = {
+			isa = PBXGroup;
+			children = (
+				9631AEF61B414E58007D489D /* libWeChatSDK.a */,
+				9631AEF71B414E58007D489D /* read_me.txt */,
+				9631AEF81B414E58007D489D /* WXApi.h */,
+				9631AEF91B414E58007D489D /* WXApiObject.h */,
+			);
+			path = WX;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9624E8E71B3D43AB00757E68 /* thridapi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9624E90B1B3D43AB00757E68 /* Build configuration list for PBXNativeTarget "thridapi" */;
+			buildPhases = (
+				9624E8E41B3D43AB00757E68 /* Sources */,
+				9624E8E51B3D43AB00757E68 /* Frameworks */,
+				9624E8E61B3D43AB00757E68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = thridapi;
+			productName = thridapi;
+			productReference = 9624E8E81B3D43AB00757E68 /* thridapi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9624E9001B3D43AB00757E68 /* thridapiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9624E90E1B3D43AB00757E68 /* Build configuration list for PBXNativeTarget "thridapiTests" */;
+			buildPhases = (
+				9624E8FD1B3D43AB00757E68 /* Sources */,
+				9624E8FE1B3D43AB00757E68 /* Frameworks */,
+				9624E8FF1B3D43AB00757E68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9624E9031B3D43AB00757E68 /* PBXTargetDependency */,
+			);
+			name = thridapiTests;
+			productName = thridapiTests;
+			productReference = 9624E9011B3D43AB00757E68 /* thridapiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9624E8E01B3D43AB00757E68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Liuym;
+				TargetAttributes = {
+					9624E8E71B3D43AB00757E68 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					9624E9001B3D43AB00757E68 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 9624E8E71B3D43AB00757E68;
+					};
+				};
+			};
+			buildConfigurationList = 9624E8E31B3D43AB00757E68 /* Build configuration list for PBXProject "thridapi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9624E8DF1B3D43AB00757E68;
+			productRefGroup = 9624E8E91B3D43AB00757E68 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9624E8E71B3D43AB00757E68 /* thridapi */,
+				9624E9001B3D43AB00757E68 /* thridapiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9624E8E61B3D43AB00757E68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9624E9161B3D441E00757E68 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				9624E8F71B3D43AB00757E68 /* Main.storyboard in Resources */,
+				9624E8FC1B3D43AB00757E68 /* LaunchScreen.xib in Resources */,
+				9624E8F91B3D43AB00757E68 /* Images.xcassets in Resources */,
+				9631AEFB1B414E58007D489D /* read_me.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9624E8FF1B3D43AB00757E68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9624E8E41B3D43AB00757E68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9624E8F41B3D43AB00757E68 /* ViewController.m in Sources */,
+				9624E9251B3D4B8B00757E68 /* RDAPICommon.m in Sources */,
+				9624E8F11B3D43AB00757E68 /* AppDelegate.m in Sources */,
+				9624E8EE1B3D43AB00757E68 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9624E8FD1B3D43AB00757E68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9624E9081B3D43AB00757E68 /* thridapiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9624E9031B3D43AB00757E68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9624E8E71B3D43AB00757E68 /* thridapi */;
+			targetProxy = 9624E9021B3D43AB00757E68 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9624E8F51B3D43AB00757E68 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9624E8F61B3D43AB00757E68 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9624E8FA1B3D43AB00757E68 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9624E8FB1B3D43AB00757E68 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9624E9091B3D43AB00757E68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9624E90A1B3D43AB00757E68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9624E90C1B3D43AB00757E68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thridapi/thridcommon/QQ",
+				);
+				INFOPLIST_FILE = thridapi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thridapi/thridcommon/WX",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9624E90D1B3D43AB00757E68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thridapi/thridcommon/QQ",
+				);
+				INFOPLIST_FILE = thridapi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thridapi/thridcommon/WX",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9624E90F1B3D43AB00757E68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = thridapiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/thridapi.app/thridapi";
+			};
+			name = Debug;
+		};
+		9624E9101B3D43AB00757E68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = thridapiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/thridapi.app/thridapi";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9624E8E31B3D43AB00757E68 /* Build configuration list for PBXProject "thridapi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9624E9091B3D43AB00757E68 /* Debug */,
+				9624E90A1B3D43AB00757E68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9624E90B1B3D43AB00757E68 /* Build configuration list for PBXNativeTarget "thridapi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9624E90C1B3D43AB00757E68 /* Debug */,
+				9624E90D1B3D43AB00757E68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9624E90E1B3D43AB00757E68 /* Build configuration list for PBXNativeTarget "thridapiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9624E90F1B3D43AB00757E68 /* Debug */,
+				9624E9101B3D43AB00757E68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9624E8E01B3D43AB00757E68 /* Project object */;
+}
