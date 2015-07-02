@@ -22,7 +22,7 @@
 		9624E91E1B3D446F00757E68 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624E91D1B3D446F00757E68 /* libiconv.dylib */; };
 		9624E9201B3D44BE00757E68 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624E91F1B3D44BE00757E68 /* Security.framework */; };
 		9624E9221B3D44C500757E68 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624E9211B3D44C500757E68 /* libstdc++.dylib */; };
-		9624E9251B3D4B8B00757E68 /* RDAPICommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9624E9241B3D4B8B00757E68 /* RDAPICommon.m */; };
+		9624E9251B3D4B8B00757E68 /* ShareCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9624E9241B3D4B8B00757E68 /* ShareCommon.m */; };
 		9631AEFA1B414E58007D489D /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9631AEF61B414E58007D489D /* libWeChatSDK.a */; };
 		9631AEFB1B414E58007D489D /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9631AEF71B414E58007D489D /* read_me.txt */; };
 		9631AEFD1B415129007D489D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9631AEFC1B415129007D489D /* libz.dylib */; };
@@ -61,8 +61,8 @@
 		9624E91D1B3D446F00757E68 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		9624E91F1B3D44BE00757E68 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9624E9211B3D44C500757E68 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
-		9624E9231B3D4B8B00757E68 /* RDAPICommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDAPICommon.h; sourceTree = "<group>"; };
-		9624E9241B3D4B8B00757E68 /* RDAPICommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDAPICommon.m; sourceTree = "<group>"; };
+		9624E9231B3D4B8B00757E68 /* ShareCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareCommon.h; sourceTree = "<group>"; };
+		9624E9241B3D4B8B00757E68 /* ShareCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareCommon.m; sourceTree = "<group>"; };
 		9631AEF61B414E58007D489D /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		9631AEF71B414E58007D489D /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
 		9631AEF81B414E58007D489D /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
@@ -174,8 +174,8 @@
 			children = (
 				9631AEF51B414E58007D489D /* WX */,
 				9624E9121B3D441E00757E68 /* QQ */,
-				9624E9231B3D4B8B00757E68 /* RDAPICommon.h */,
-				9624E9241B3D4B8B00757E68 /* RDAPICommon.m */,
+				9624E9231B3D4B8B00757E68 /* ShareCommon.h */,
+				9624E9241B3D4B8B00757E68 /* ShareCommon.m */,
 			);
 			path = thridcommon;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9624E8F41B3D43AB00757E68 /* ViewController.m in Sources */,
-				9624E9251B3D4B8B00757E68 /* RDAPICommon.m in Sources */,
+				9624E9251B3D4B8B00757E68 /* ShareCommon.m in Sources */,
 				9624E8F11B3D43AB00757E68 /* AppDelegate.m in Sources */,
 				9624E8EE1B3D43AB00757E68 /* main.m in Sources */,
 			);

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "RDAPICommon.h"
+#import "ShareCommon.h"
 @interface AppDelegate ()
 
 @end
@@ -18,19 +18,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [RDAPICommon rdapiRegister];
+    [ShareCommon shareRegister];
     
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    return [RDAPICommon handleOpenUrl:url];
+    return [ShareCommon handleOpenUrl:url];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return [RDAPICommon handleOpenUrl:url];
+    return [ShareCommon handleOpenUrl:url];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
